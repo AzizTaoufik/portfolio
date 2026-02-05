@@ -1,2 +1,131 @@
-Hello!
-<div> Test </div>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mein Portfolio">
+    <title>Portfolio | Dein Name</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">Portfolio</div>
+            <div class="space-x-6">
+                <a href="#about" class="hover:text-blue-600 transition">Über mich</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projekte</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center">
+        <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Hi! Ich bin <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Dein Name</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Entwickler, Designer & Creator. Ich baue moderne Web-Erlebnisse.
+                </p>
+                <div class="flex gap-4">
+                    <button class="btn-primary">Meine Arbeit ansehen</button>
+                    <button class="btn-secondary">Kontaktiere mich</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Über mich</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Mit mehreren Jahren Erfahrung in Webentwicklung und Design schaffe ich digitale Lösungen, 
+                        die nicht nur schön aussehen, sondern auch optimal funktionieren.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Meine Leidenschaft liegt darin, komplexe Probleme in elegante und benutzerfreundliche 
+                        Interfaces zu transformieren.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg p-12 h-64 flex items-center justify-center">
+                    <p class="text-gray-500">Platz für Bild</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Projekte</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-gradient-to-br from-blue-100 to-blue-200 h-48 flex items-center justify-center">
+                        <p class="text-gray-500">Projekt 1</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Projekt Title</h3>
+                        <p class="text-gray-600 mb-4">Kurze Beschreibung des Projekts</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Details →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-gradient-to-br from-purple-100 to-purple-200 h-48 flex items-center justify-center">
+                        <p class="text-gray-500">Projekt 2</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Projekt Title</h3>
+                        <p class="text-gray-600 mb-4">Kurze Beschreibung des Projekts</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Details →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-gradient-to-br from-pink-100 to-pink-200 h-48 flex items-center justify-center">
+                        <p class="text-gray-500">Projekt 3</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Projekt Title</h3>
+                        <p class="text-gray-600 mb-4">Kurze Beschreibung des Projekts</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Lass uns zusammenarbeiten</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Interessiert? Kontaktiere mich unter:
+            </p>
+            <div class="space-y-4">
+                <p class="text-2xl">
+                    <a href="mailto:dein@email.de" class="text-blue-600 hover:text-blue-700">dein@email.de</a>
+                </p>
+                <div class="flex justify-center gap-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">LinkedIn</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">GitHub</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2026 Dein Name. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>
