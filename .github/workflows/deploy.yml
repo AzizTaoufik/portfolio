@@ -1,0 +1,43 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Schritt 1: Projekt-Code herunterladen
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Schritt 2: Node.js installieren
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Schritt 3: Dependencies installieren
+      - name: Install dependencies
+        run: npm install
+
+      # Schritt 4: CSS builden
+      - name: Build CSS
+        run: npm run build
+
+      # Schritt 5: Änderungen committen
+      - name: Commit built files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add dist/
+          git diff-index --quiet HEAD || git commit -m "Build: Update dist folder"
+
+      # Schritt 6: Zurück zu GitHub pushen
+      - name: Push changes
+        run: git push
