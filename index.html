@@ -1,131 +1,811 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mein Portfolio">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mein Portfolio" />
     <title>Portfolio | Dein Name</title>
-    <link rel="stylesheet" href="./dist/styles.css">
-</head>
-<body class="bg-white text-gray-900">
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <script>
+      // Dark Mode Toggle
+      function initDarkMode() {
+        const html = document.documentElement;
+        const isDark = localStorage.getItem("darkMode") === "true";
+        if (isDark) html.classList.add("dark");
+      }
+
+      function toggleDarkMode() {
+        const html = document.documentElement;
+        const isDark = html.classList.toggle("dark");
+        localStorage.setItem("darkMode", isDark);
+      }
+
+      initDarkMode();
+    </script>
+  </head>
+  <body
+    class="bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300"
+  >
     <!-- Navigation -->
-    <nav class="sticky top-0 bg-white shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600">Portfolio</div>
-            <div class="space-x-6">
-                <a href="#about" class="hover:text-blue-600 transition">Über mich</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projekte</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Kontakt</a>
-            </div>
+    <nav
+      class="sticky top-0 bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-800 z-50"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div
+          class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        >
+          Portfolio
         </div>
+        <button
+          onclick="toggleDarkMode()"
+          class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition"
+          aria-label="Toggle dark mode"
+        >
+          <svg
+            class="w-5 h-5 hidden dark:block"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+          <svg
+            class="w-5 h-5 dark:hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 1.78a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm2.828 2.828a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm2.828 2.829a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM10 7a3 3 0 100 6 3 3 0 000-6zm-4.22-1.78a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414L5.78 5.22a1 1 0 010-1.414zm0 5.656a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zM5.78 14.22a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm0-2.828a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zM10 17a1 1 0 110-2 1 1 0 010 2z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center">
-        <div class="max-w-6xl mx-auto px-6 py-20 w-full">
-            <div class="max-w-2xl">
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                    Hi! Ich bin <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Dein Name</span>
-                </h1>
-                <p class="text-xl text-gray-600 mb-8">
-                    Entwickler, Designer & Creator. Ich baue moderne Web-Erlebnisse.
-                </p>
-                <div class="flex gap-4">
-                    <button class="btn-primary">Meine Arbeit ansehen</button>
-                    <button class="btn-secondary">Kontaktiere mich</button>
-                </div>
+    <section
+      class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 flex items-center pt-20 md:pt-0"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+        >
+          <!-- Text Content -->
+          <div class="text-center md:text-left">
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
+            >
+              Hi! Ich bin
+              <span
+                class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+              >
+                Dein Name
+              </span>
+            </h1>
+            <p
+              class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-4 leading-relaxed max-w-xl mx-auto md:mx-0"
+            >
+              Fullstack Developer, UI/UX Designer & Creator
+            </p>
+            <p
+              class="text-base sm:text-lg text-gray-500 dark:text-gray-400 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0"
+            >
+              Ich baue moderne, responsive Web-Erlebnisse mit modernen
+              Technologien.
+            </p>
+            <!-- CTA Buttons -->
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fadeInUp"
+            >
+              <a href="#skills" class="btn-primary">Meine Skills</a>
+              <a href="#contact" class="btn-secondary">Kontaktiere mich</a>
             </div>
+          </div>
+
+          <!-- Profile Image -->
+          <div class="flex justify-center md:justify-end">
+            <div
+              class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-blue-100 dark:border-blue-900/30 shadow-xl"
+            >
+              <img
+                src="./assets/images/profile.jpg"
+                alt="Profilbild"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
+
+        <!-- Social Icons (Hero zusätzlich) -->
+        <div class="flex justify-center md:justify-start gap-4 mt-12">
+          <a
+            href="#"
+            class="p-3 sm:p-4 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+            aria-label="GitHub"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="p-3 sm:p-4 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.474-2.235-1.668-2.235-.909 0-1.451.607-1.688 1.194-.087.214-.109.512-.109.81v5.8h-3.553V8.997h3.553v1.53c.477-.736 1.332-1.785 3.242-1.785 2.366 0 4.14 1.547 4.14 4.874v7.846zM5.337 7.433c-1.144 0-2.063-.929-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.136-.925 2.065-2.064 2.065zm1.782 12.019H3.555V8.997h3.564v10.455zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="p-3 sm:p-4 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+            aria-label="Twitter"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">Über mich</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg text-gray-600 mb-4">
-                        Mit mehreren Jahren Erfahrung in Webentwicklung und Design schaffe ich digitale Lösungen, 
-                        die nicht nur schön aussehen, sondern auch optimal funktionieren.
-                    </p>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Meine Leidenschaft liegt darin, komplexe Probleme in elegante und benutzerfreundliche 
-                        Interfaces zu transformieren.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg p-12 h-64 flex items-center justify-center">
-                    <p class="text-gray-500">Platz für Bild</p>
-                </div>
-            </div>
+    <section id="about" class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-fadeInUp"
+        >
+          Über mich
+        </h2>
+        <div class="max-w-2xl mx-auto space-y-6">
+          <p
+            class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-fadeInUp delay-100"
+          >
+            Mit mehreren Jahren Erfahrung in .NET und Full-Stack Entwicklung
+            schaffe ich robuste digitale Lösungen mit modernen Technologien.
+          </p>
+          <p
+            class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-fadeInUp delay-200"
+          >
+            Meine Leidenschaft liegt darin, komplexe Anforderungen in elegante,
+            wartbare Code und benutzerfreundliche Interfaces zu transformieren.
+          </p>
+          <p
+            class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-fadeInUp delay-300"
+          >
+            Vom Backend bis zum Frontend – ich begleite Projekte mit vollem
+            Einsatz, mit guten Praktiken wie Unit Testing, CI/CD und
+            OOP-Prinzipien.
+          </p>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">Projekte</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="bg-gradient-to-br from-blue-100 to-blue-200 h-48 flex items-center justify-center">
-                        <p class="text-gray-500">Projekt 1</p>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Projekt Title</h3>
-                        <p class="text-gray-600 mb-4">Kurze Beschreibung des Projekts</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Details →</a>
-                    </div>
-                </div>
+    <!-- Skills Section (wichtigster Part) -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold mb-4 text-center animate-fadeInUp"
+        >
+          Skills & Technologien
+        </h2>
+        <p
+          class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto animate-fadeInUp delay-100"
+        >
+          Mein Arsenal an Tools und Technologien zur Entwicklung moderner
+          Anwendungen
+        </p>
 
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="bg-gradient-to-br from-purple-100 to-purple-200 h-48 flex items-center justify-center">
-                        <p class="text-gray-500">Projekt 2</p>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Projekt Title</h3>
-                        <p class="text-gray-600 mb-4">Kurze Beschreibung des Projekts</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Details →</a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="bg-gradient-to-br from-pink-100 to-pink-200 h-48 flex items-center justify-center">
-                        <p class="text-gray-500">Projekt 3</p>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Projekt Title</h3>
-                        <p class="text-gray-600 mb-4">Kurze Beschreibung des Projekts</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Details →</a>
-                    </div>
-                </div>
+        <!-- Backend/Programming Languages -->
+        <div class="mb-16">
+          <h3
+            class="text-xl sm:text-2xl font-semibold mb-8 text-center sm:text-left text-blue-600 dark:text-blue-400 animate-slideInLeft"
+          >
+            Backend & Programmierung
+          </h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6"
+          >
+            <!-- C# -->
+            <div class="skill-item group animate-fadeInUp">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg"
+                  alt="C#"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                C#
+              </p>
             </div>
+
+            <!-- .NET -->
+            <div class="skill-item group animate-fadeInUp delay-100">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg"
+                  alt=".NET"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                .NET
+              </p>
+            </div>
+
+            <!-- PHP -->
+            <div class="skill-item group animate-fadeInUp delay-200">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+                  alt="PHP"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                PHP
+              </p>
+            </div>
+
+            <!-- SQL -->
+            <div class="skill-item group animate-fadeInUp delay-300">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+                  alt="SQL"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                SQL
+              </p>
+            </div>
+
+            <!-- API Development -->
+            <div class="skill-item group animate-fadeInUp delay-400">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swagger/swagger-original.svg"
+                  alt="API"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                API
+              </p>
+            </div>
+
+            <!-- OOP -->
+            <div class="skill-item group animate-fadeInUp delay-500">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm"
+              >
+                <div class="text-center">
+                  <div
+                    class="text-lg font-bold text-blue-600 dark:text-blue-400"
+                  >
+                    OOP
+                  </div>
+                </div>
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                OOP
+              </p>
+            </div>
+          </div>
         </div>
+
+        <!-- Frontend -->
+        <div class="mb-16">
+          <h3
+            class="text-xl sm:text-2xl font-semibold mb-8 text-center sm:text-left text-green-600 dark:text-green-400 animate-slideInLeft delay-100"
+          >
+            Frontend
+          </h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6"
+          >
+            <!-- HTML -->
+            <div class="skill-item group animate-fadeInUp">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+                  alt="HTML5"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                HTML5
+              </p>
+            </div>
+
+            <!-- CSS -->
+            <div class="skill-item group animate-fadeInUp delay-100">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+                  alt="CSS3"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                CSS3
+              </p>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="skill-item group animate-fadeInUp delay-200">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                JavaScript
+              </p>
+            </div>
+
+            <!-- Tailwind CSS -->
+            <div class="skill-item group animate-fadeInUp delay-300">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
+                  alt="Tailwind CSS"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Tailwind
+              </p>
+            </div>
+
+            <!-- Laravel -->
+            <div class="skill-item group animate-fadeInUp delay-400">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg"
+                  alt="Laravel"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Laravel
+              </p>
+            </div>
+
+            <!-- Unit Testing -->
+            <div class="skill-item group animate-fadeInUp delay-500">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-original.svg"
+                  alt="Unit Testing"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Unit Tests
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & DevOps -->
+        <div>
+          <h3
+            class="text-xl sm:text-2xl font-semibold mb-8 text-center sm:text-left text-purple-600 dark:text-purple-400 animate-slideInLeft delay-200"
+          >
+            Tools & DevOps
+          </h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6"
+          >
+            <!-- Git -->
+            <div class="skill-item group animate-fadeInUp">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+                  alt="Git"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Git
+              </p>
+            </div>
+
+            <!-- CI/CD -->
+            <div class="skill-item group animate-fadeInUp delay-100">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
+                  alt="CI/CD"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                CI/CD
+              </p>
+            </div>
+
+            <!-- Unix/Linux -->
+            <div class="skill-item group animate-fadeInUp delay-200">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+                  alt="Unix/Linux"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Unix/Linux
+              </p>
+            </div>
+
+            <!-- npm / Node.js -->
+            <div class="skill-item group animate-fadeInUp delay-300">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg"
+                  alt="Node.js"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Node.js
+              </p>
+            </div>
+
+            <!-- Postman -->
+            <div class="skill-item group animate-fadeInUp delay-400">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-plain.svg"
+                  alt="Postman"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Postman
+              </p>
+            </div>
+
+            <!-- VS Code -->
+            <div class="skill-item group animate-fadeInUp delay-500">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
+                  alt="VS Code"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                VS Code
+              </p>
+            </div>
+
+            <!-- Visual Studio -->
+            <div class="skill-item group animate-fadeInUp delay-600">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm p-3"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/visualstudio/visualstudio-original.svg"
+                  alt="Visual Studio"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <p
+                class="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 text-center"
+              >
+                Visual Studio
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos & Demos Section -->
+    <section id="videos" class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold mb-4 text-center animate-fadeInUp"
+        >
+          Videos & Demos
+        </h2>
+        <p
+          class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto animate-fadeInUp delay-100"
+        >
+          Erlebe meine Projekte in Aktion – hier sind Demo-Videos und Tutorials
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        >
+          <!-- Video 1 -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp"
+          >
+            <div
+              class="relative w-full h-48 sm:h-56 bg-gray-300 dark:bg-slate-700"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
+                title="Demo Video 1"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="text-lg font-semibold mb-2">Project Demo #1</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Ein großartiges Projekt, das zeigt, wie moderne Technologien
+                funktionieren.
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp delay-100"
+          >
+            <div
+              class="relative w-full h-48 sm:h-56 bg-gray-300 dark:bg-slate-700"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/jNQXAC9IVRw?controls=0"
+                title="Demo Video 2"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="text-lg font-semibold mb-2">Project Demo #2</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Tutorial zum Setup und zur Optimierung von Performance in der
+                Praxis.
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp delay-200"
+          >
+            <div
+              class="relative w-full h-48 sm:h-56 bg-gray-300 dark:bg-slate-700"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/9bZkp7q19f0?controls=0"
+                title="Demo Video 3"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="text-lg font-semibold mb-2">Project Demo #3</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Best Practices für Entwicklung und Deployment in
+                Production-Umgebungen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-2xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6">Lass uns zusammenarbeiten</h2>
-            <p class="text-xl text-gray-600 mb-8">
-                Interessiert? Kontaktiere mich unter:
+    <section id="contact" class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+          Lass uns zusammenarbeiten
+        </h2>
+        <p
+          class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed"
+        >
+          Ich bin offen für neue Projekte, Kooperationen und interessante Ideen.
+          Kontaktiere mich gerne – ich antworte schnell!
+        </p>
+
+        <div class="space-y-8">
+          <!-- Email -->
+          <div>
+            <p class="text-gray-600 dark:text-gray-400 mb-3">
+              Schreib mir eine E-Mail:
             </p>
-            <div class="space-y-4">
-                <p class="text-2xl">
-                    <a href="mailto:dein@email.de" class="text-blue-600 hover:text-blue-700">dein@email.de</a>
-                </p>
-                <div class="flex justify-center gap-6">
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">LinkedIn</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">GitHub</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">Twitter</a>
-                </div>
+            <a
+              href="mailto:dein@email.de"
+              class="inline-block text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition"
+            >
+              dein@email.de
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              Oder find mich auf Social Media:
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+              <a
+                href="#"
+                class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-all hover:scale-110"
+                aria-label="GitHub"
+              >
+                <svg
+                  class="w-7 h-7 sm:w-8 sm:h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-all hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  class="w-7 h-7 sm:w-8 sm:h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.474-2.235-1.668-2.235-.909 0-1.451.607-1.688 1.194-.087.214-.109.512-.109.81v5.8h-3.553V8.997h3.553v1.53c.477-.736 1.332-1.785 3.242-1.785 2.366 0 4.14 1.547 4.14 4.874v7.846zM5.337 7.433c-1.144 0-2.063-.929-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.136-.925 2.065-2.064 2.065zm1.782 12.019H3.555V8.997h3.564v10.455zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-all hover:scale-110"
+                aria-label="Twitter"
+              >
+                <svg
+                  class="w-7 h-7 sm:w-8 sm:h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="text-gray-400">© 2026 Dein Name. Alle Rechte vorbehalten.</p>
-        </div>
+    <footer class="bg-gray-900 dark:bg-black text-white py-8">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-gray-400 text-sm"
+      >
+        <p>© 2026 Dein Name. Alle Rechte vorbehalten.</p>
+        <p class="mt-2">
+          Gebaut mit <span class="text-red-500">❤️</span> &
+          <a
+            href="https://tailwindcss.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-white transition"
+            >Tailwind CSS</a
+          >
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
