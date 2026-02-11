@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Impressum - Abdelaziz Taoufik" />
-    <title>Impressum | Abdelaziz</title>
+    <meta name="description" content="Impressum - Felix Biastoch" />
+    <title>Impressum | Felix Biastoch</title>
     <link rel="stylesheet" href="./dist/styles.css" />
     <script>
       function initDarkMode() {
@@ -67,40 +67,89 @@
       </div>
     </nav>
 
-    <main class="min-h-screen flex items-start pt-10 pb-20">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6">
-        <h1 class="text-3xl font-bold mb-6">Impressum</h1>
+    <main>
+      <section
+        class="relative min-h-screen overflow-hidden flex items-center justify-center py-20 md:py-32"
+      >
+        <!-- Video Background -->
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="./assets/videos/background.mp4" type="video/mp4" />
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
 
-        <section class="prose dark:prose-invert">
-          <h2>Angaben gemäß § 5 TMG</h2>
-          <p>Verantwortlich: <strong>Abdelaziz Taoufik</strong></p>
+        <!-- Overlay for readability -->
+        <div
+          class="absolute inset-0 bg-white/70 dark:bg-slate-950/70 backdrop-blur-sm"
+        ></div>
 
-          <h3>Kontakt</h3>
-          <p>Direkter Link zur rechtlichen Generierung/Quelltext:</p>
-          <p>
-            <a
-              href="https://app.dieter-datenschutz.de/api/livedoc/cml9m5gy1006pqp0s6n2dijjf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-blue-600 dark:text-blue-400"
-              >Rechtstext (Dieter Datenschutz)</a
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 w-full z-10">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div
+              class="backdrop-blur-md bg-slate-100/60 dark:bg-white/10 rounded-2xl p-8 md:p-16 shadow-lg border border-white/30 dark:border-slate-700/30 space-y-6"
             >
-          </p>
+              <h1 class="text-3xl font-bold mb-4">Impressum</h1>
 
-          <h3>Haftung für Inhalte</h3>
-          <p>
-            Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für
-            die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann
-            jedoch keine Gewähr übernommen werden.
-          </p>
+              <section
+                class="prose dark:prose-invert leading-relaxed space-y-6"
+              >
+                <h2 class="font-bold">Angaben gemäß § 5 DDG</h2>
+                <p>
+                  Abdelaziz Taoufik<br />
+                  Viktor-Jakubovicz Str. 3<br />
+                  47829 Krefeld<br />
+                  Deutschland
+                </p>
 
-          <h3>Urheberrecht</h3>
-          <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
-            diesen Seiten unterliegen dem deutschen Urheberrecht.
-          </p>
-        </section>
-      </div>
+                <h3 class="font-bold">Kontakt</h3>
+                <p>
+                  E-Mail:
+                  <a href="mailto:ataoufik57@gmail.com">ataoufik57@gmail.com</a>
+                </p>
+
+                <h3 class="font-bold">Redaktionell verantwortlich</h3>
+                <p>
+                  Abdelaziz Taoufik<br />
+                  Viktor-Jakubovicz Str. 3<br />
+                  47829 Krefeld
+                </p>
+
+                <h3 class="font-bold">EU‑Streitschlichtung</h3>
+                <p>
+                  Die Europäische Kommission stellt eine Plattform zur
+                  Online‑Streitbeilegung (OS) bereit:
+                  <a
+                    href="https://ec.europa.eu/consumers/odr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >https://ec.europa.eu/consumers/odr/</a
+                  >
+                  <br />Unsere E‑Mail‑Adresse finden Sie oben im Impressum.
+                </p>
+
+                <h3 class="font-bold">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>
+                <p>
+                  Wir sind nicht bereit oder verpflichtet, an
+                  Streitbeilegungsverfahren vor einer
+                  Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+
+                <h3 class="font-bold">Haftungsausschluss</h3>
+                <p>
+                  Die Inhalte wurden mit größter Sorgfalt erstellt. Für die
+                  Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann
+                  jedoch keine Gewähr übernommen werden.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
